@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - develop
-name: "Build and Release"
+name: "Build and Release IOS"
 jobs:
   build:
     name: Build and Release
@@ -35,13 +35,6 @@ jobs:
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/ios/iphoneos/Runner.app"
-          tag: v1.0.${{github.run_number}}
+          artifacts: "build/ios/iphoneos/app.ipa"
+          tag: ios.v1.0.${{github.run_number}}
           token: ${{secrets.TOKEN}}
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_IOS_ID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          groups: testers
-          file: build/ios/iphoneos/Runner.app

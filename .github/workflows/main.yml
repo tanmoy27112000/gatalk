@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - develop
-name: "Build and Release"
+name: "Build and Release ANDR"
 jobs:
   build:
     name: Build and Release
