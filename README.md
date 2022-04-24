@@ -1,6 +1,6 @@
 # sampleapp
 
-A new Flutter project.
+GA talk sample app
 
 ## Getting Started
 
